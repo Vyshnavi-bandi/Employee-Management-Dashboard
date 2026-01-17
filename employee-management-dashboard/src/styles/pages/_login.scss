@@ -1,2 +1,80 @@
 @import "../abstracts/variables";
 @import "../abstracts/mixins";
+
+
+.login {
+  min-height: 100vh;
+  @include flex-center;
+
+
+  &_card {
+    background: $bg-white;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    // border:$border-primary 1px solid;
+  }
+
+  &_title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $white;
+    text-align: center;
+  }
+
+  &_subtitle {
+    font-size: 0.95rem;
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &_field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+      color: $black;
+    }
+
+    input {
+      padding: 0.65rem 0.75rem;
+      border: 1px solid $border-primary;
+      border-radius: 8px;
+      font-size: 0.9rem;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+      }
+    }
+  }
+
+  &_btn {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 8%);
+    }
+  }
+}
