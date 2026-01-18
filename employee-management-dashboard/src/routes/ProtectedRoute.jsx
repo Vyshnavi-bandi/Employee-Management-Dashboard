@@ -1,11 +1,8 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
-export const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = () => {
   const isAuthenticated = sessionStorage.getItem("isAuth");
-
-  if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
-  }
-
-  return children;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/" replace />;
 };
+
+export default ProtectedRoute;
